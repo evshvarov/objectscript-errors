@@ -1,11 +1,16 @@
-## intersystems-objectscript-template
-This is a template for InterSystems ObjectScript Github repository.
-The template goes also with a few files which let you immedietly compile your ObjecScript files in InterSystems IRIS Community Edition in a docker container
-
+## objectscript-errors
+Class to demonstrate how to generate certain objectscript errors described [here] (https://docs.intersystems.com/irislatest/csp/docbook/Doc.View.cls?KEY=RERR_system)
 ## Prerequisites
 Make sure you have [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) and [Docker desktop](https://www.docker.com/products/docker-desktop) installed.
 
-## Installation 
+## Installation with ZPM
+
+```
+zpm "install objectscript-errors"
+USER>do ##class(shvarov.objectscript.errors).DIVIDE()
+```
+
+## Running with Docker
 
 Clone/git pull the repo into any local directory
 
@@ -32,8 +37,10 @@ Open IRIS terminal:
 ```
 $ docker-compose exec iris iris session iris
 USER>zn "IRISAPP"
-IRISAPP>write ##class(PackageSample.ObjectScript).Test()
+IRISAPP>do ##class(shvarov.objectscript.errors).DIVIDE()
 ```
+You will see the DIVIDE error.
+similar with other methods of the [class](https://github.com/evshvarov/objectscript-errors/blob/master/src/shvarov/objectscript/errors.cls)
 ## How to start coding
 This repository is ready to code in VSCode with ObjectScript plugin.
 Install [VSCode](https://code.visualstudio.com/), [Docker](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-docker) and [ObjectScript](https://marketplace.visualstudio.com/items?itemName=daimor.vscode-objectscript) plugin and open the folder in VSCode.
