@@ -1,7 +1,7 @@
 Class shvarov.objectscript.errors
 {
 
-ClassMethod DIVIDE() As %Status
+ClassMethod DIVIDE(verbose=0) As %Status
 {
     set sc=$$$OK
    try {
@@ -11,7 +11,7 @@ ClassMethod DIVIDE() As %Status
        do e.Log()
        set sc=e.AsStatus()
    }
-   if 'sc do $System.OBJ.DisplayError(sc)
+   if 'sc,verbose do $System.OBJ.DisplayError(sc)
    quit sc
 }
 
