@@ -3,7 +3,7 @@
   <Document name="objectscript-errors.ZPM">
     <Module>
       <Name>objectscript-errors</Name>
-      <Version>1.0.2</Version>
+      <Version>1.0.3</Version>
       <Description>Example class which reproduces typical ObjectScript errors</Description>
       <Packaging>module</Packaging>
       <SourcesRoot>src</SourcesRoot>
